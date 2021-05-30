@@ -8,21 +8,21 @@ go web api server environment template.
 - phpmyadmin
 
 ## Quick Start
-copy env  
+1. copy env  
 $ `cp .env.example .env`  
-change db name on .env and docker-compose.yml  
-build docker image  
+2. change db name on .env and docker-compose.yml  
+3. build docker image  
 $ `docker-compose build`  
-make container of web(go), mysql, phpmyadmin  
+4. make container of web(go), mysql, phpmyadmin  
 $ `docker-compose up -d`  
-check server logs  
+5. check server logs  
 $ `make logs`  
-enter the web container   
+6. enter the web container   
 $ `make web`  
-migration  
+7. migration  
 \# `goose up`
 
-access web  
+8. access web  
 http://localhost:8080/  
 access phpmyadmin  
 http://localhost:8081/
