@@ -1,6 +1,12 @@
 # go_http_api_template
 go web api server environment template.
 
+## Features
+- golang:1.16.3
+- air
+- mysql:5.7
+- phpmyadmin
+
 ## Quick Start
 - build docker image  
 $ `docker-compose build`  
