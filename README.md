@@ -12,6 +12,8 @@ build docker image
 $ `docker-compose build`  
 make container of web(go), mysql, phpmyadmin  
 $ `docker-compose up -d`  
+check server logs  
+$ `make logs`  
 
 access web  
 http://localhost:8080/  

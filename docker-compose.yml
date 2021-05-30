@@ -4,10 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: "air"
+    command: "air -d"
     tty: true
     stdin_open: true
-    command: "air"
+    command: "air -d"
     volumes:
       - ./app:/go/src/app
     ports:
@@ -27,6 +27,7 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    container_name: mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

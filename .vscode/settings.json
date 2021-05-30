@@ -1,20 +1,15 @@
 {
-  "go.useLanguageServer": true,
-  "go.alternateTools": {
-      "go-langserver": "gopls"
-  },
-  "go.languageServerExperimentalFeatures": {
-      "diagnostics": true
-  },
   "[go]": {
-      "editor.insertSpaces": true,
-      "editor.snippetSuggestions": "none",
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-          "source.organizeImports": true
-      },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
   },
   "gopls": {
-      "usePlaceholders": false
-  }
+    "usePlaceholders": false
+  },
+  "go.formatTool": "gofmt"
 }

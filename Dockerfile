@@ -9,5 +9,7 @@ RUN apk update \
     && go get -u github.com/cosmtrek/air@latest
 
 RUN go get github.com/jinzhu/gorm \
-    && go get github.com/jinzhu/gorm/dialects/mysql \
-    && go get -u github.com/gin-gonic/gin
+    && go get -u github.com/jinzhu/gorm/dialects/mysql \
+    && go get -u github.com/gin-gonic/gin \
+    && go get -u github.com/joho/godotenv \
+    && go get -u github.com/gin-contrib/cors
