@@ -1,4 +1,4 @@
-FROM golang:1.16.3-alpine
+FROM golang:1.15.12-alpine3.13
 
 ENV GO111MODULE on
 
@@ -6,4 +6,8 @@ WORKDIR /go/src/app
 
 RUN apk update \
     && apk add git \
-    && go install github.com/cosmtrek/air@latest
+    && go get -u github.com/cosmtrek/air@latest
+
+RUN go get github.com/jinzhu/gorm \
+    && go get github.com/jinzhu/gorm/dialects/mysql \
+    && go get -u github.com/gin-gonic/gin

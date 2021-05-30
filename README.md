@@ -2,7 +2,7 @@
 go web api server environment template.
 
 ## Features
-- golang:1.16.3
+- golang:1.15.12
 - air
 - mysql:5.7
 - phpmyadmin
