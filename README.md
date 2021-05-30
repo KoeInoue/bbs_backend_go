@@ -14,6 +14,10 @@ make container of web(go), mysql, phpmyadmin
 $ `docker-compose up -d`  
 check server logs  
 $ `make logs`  
+enter the web container   
+$ `make web`  
+migration  
+$ `goose up`
 
 access web  
 http://localhost:8080/  

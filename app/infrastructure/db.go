@@ -37,8 +37,6 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
-
-	autoMigration(db)
 }
 
 // Db is called in models
