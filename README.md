@@ -2,6 +2,7 @@
 go web api server environment template.
 
 ## Features
+- Clean Architecture
 - golang:1.15.12
 - [Air](https://github.com/cosmtrek/air)
 - gin
