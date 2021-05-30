@@ -6,6 +6,7 @@ go web api server environment template.
 - [Air](https://github.com/cosmtrek/air)
 - gin
 - gorm
+- goose
 - mysql:5.7
 - phpmyadmin
 
