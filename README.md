@@ -4,6 +4,8 @@ go web api server environment template.
 ## Features
 - golang:1.15.12
 - [Air](https://github.com/cosmtrek/air)
+- gin
+- gorm
 - mysql:5.7
 - phpmyadmin
 
