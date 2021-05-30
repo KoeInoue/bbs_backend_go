@@ -7,10 +7,10 @@ $ `docker-compose build`
 - make container of web(go), mysql, phpmyadmin  
 $ `docker-compose up -d`  
 
-access
-http://localhost:8080/
-access phpmyadmin
-http://localhost:8080/
+access web  
+http://localhost:8080/  
+access phpmyadmin  
+http://localhost:8081/
 
 ## Tips
 - You don't need to run `go run main.go` everytime you changed go file. [Air](https://github.com/cosmtrek/air) is running in go_web container
