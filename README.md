@@ -8,9 +8,9 @@ go web api server environment template.
 - phpmyadmin
 
 ## Quick Start
-- build docker image  
+build docker image  
 $ `docker-compose build`  
-- make container of web(go), mysql, phpmyadmin  
+make container of web(go), mysql, phpmyadmin  
 $ `docker-compose up -d`  
 
 access web  
