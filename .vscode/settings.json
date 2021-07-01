@@ -10,6 +10,5 @@
   },
   "gopls": {
     "usePlaceholders": false
-  },
-  "go.formatTool": "gofmt"
+  }
 }

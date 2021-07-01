@@ -16,27 +16,50 @@ services:
       - apparmor:unconfined
     cap_add:
       - SYS_PTRACE
-    container_name: go_web
+    depends_on:
+      - mariadb
+    env_file: app/.env
+    container_name: go_server
 
-  mysql:
-    image: mysql:5.7
+  https-portal:
+    image: steveltn/https-portal:1
+    container_name: https_portal
+    ports:
+      - "80:80"
+      - "443:443"
+    tty: true
+    volumes:
+      - ./Certs/:/var/lib/https-portal/
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: sample
+      DOMAINS: "localhost -> http://web:8080"
+      STAGE: "local"
+      # FORCE_RENEW: 'true'
+    links:
+      - web
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.5.4
+    environment:
+      MYSQL_DATABASE: viet_college
       MYSQL_USER: user
       MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
-    container_name: mysql
+      MYSQL_ROOT_PASSWORD: mariadb
+    volumes:
+      - db_data:/var/lib/mysql
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+  pma:
+    container_name: pma
+    image: phpmyadmin/phpmyadmin:latest
     environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=mysql
-      - PMA_USER=root
-      - PMA_PASSWORD=password
-    links:
-      - mysql
+      PMA_HOST: mariadb
+      PMA_USER: user
+      PMA_PASSWORD: password
     ports:
-      - 8081:80
+      - "8081:80"
+    depends_on:
+      - mariadb
+
+volumes:
+  db_data:
+  app:

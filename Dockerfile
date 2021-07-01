@@ -1,18 +1,28 @@
-FROM golang:1.15.12-alpine3.13
+FROM golang:1.15.13-alpine3.12 as builder
 
+ENV CGO_ENABLED=1
+ENV GOOS=linux
+ENV GOARCH=amd64
 ENV GO111MODULE on
+ENV ROOT=/go/src/app
 
-WORKDIR /go/src/app
+WORKDIR ${ROOT}
 
 RUN apk update \
     && apk add git \
     gcc \
     musl-dev \
-    && go get -u github.com/cosmtrek/air@latest
+    upx \
+    && apk add --no-cache ca-certificates && update-ca-certificates \
+    && go get -u github.com/cosmtrek/air@latest \
+    && go get -u bitbucket.org/liamstask/goose/cmd/goose \
+    && go get github.com/pwaller/goupx \
+    && go get github.com/go-bindata/go-bindata/... \
+    && go get github.com/elazarl/go-bindata-assetfs/...
 
-RUN go get github.com/jinzhu/gorm \
-    && go get -u github.com/jinzhu/gorm/dialects/mysql \
-    && go get -u github.com/gin-gonic/gin \
-    && go get -u github.com/joho/godotenv \
-    && go get -u github.com/gin-contrib/cors \
-    && go get bitbucket.org/liamstask/goose/cmd/goose
+COPY app/go.mod app/go.sum ./
+RUN go mod download
+
+COPY ./app ${ROOT}
+
+EXPOSE 8080

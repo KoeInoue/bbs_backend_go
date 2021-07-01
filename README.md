@@ -13,7 +13,9 @@ go web api server environment template.
 
 ## Quick Start
 1. copy env  
+$ `cd app/`  
 $ `cp .env.example .env`  
+$ `cd ..`  
 2. change db name on .env and docker-compose.yml  
 3. build docker image  
 $ `docker-compose build`  

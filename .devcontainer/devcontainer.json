@@ -4,7 +4,7 @@
 		"../docker-compose.yml",
 	],
 	"service": "web",
-	"workspaceFolder": "/go/src/app",
+	"workspaceFolder": "/go/src/github.com/KoeInoue/viet_college_api",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/ash",
 		"go.toolsManagement.checkForUpdates": "off",

@@ -1,2 +1,4 @@
 tmp/
 .env
+Certs/
+go_http_api_template
